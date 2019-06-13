@@ -1,0 +1,199 @@
+Inheritance 
+
+	what's inherited from super class ? 
+		All visible fields and methods 
+		including static fields and instance fields 
+
+
+	
+	Constructors are not inherited 
+		but can be accessible using super(arg..)
+
+
+	this(args)  
+		this is used to call current class's other constructor
+
+	super(args)
+		this is used to call super class's other constructor
+
+
+
+	Method overriding : 
+		we can override the inherited instance methods from super class in sub class to define sub class version of the method . 
+
+		 it has to have same method name 
+		 it has to have same parameter list 
+		 it has to have same return type --at this moment 
+		 it has to have same or more visibility 
+
+		 if super class method has visibility of < >
+		 what can be sub class's access modifier 
+
+		 public    ---->  public 
+		 protected ---->  protected , public 
+		 default   ---->  default, protected, public 
+		 private   ---->  ALL ! ????? ARE YOU SURE ????
+		 		THERE IS NO OVERRIDING CONCEPT FOR PRIVATE METHOD, BECAUSE IT'S NOT INHERITED 
+
+
+
+	we have been already overriding the toString() method 
+	from Object class to avoid getting hashcode 
+
+	public String toString(){
+		return "your own message"; 
+	}
+
+========================================================================
+
+	Create Animal class 
+
+		with single method called 
+		makeNoise accept no parameter return nothing 
+		it print out general noise
+
+	Create 2 sub classes 
+		Horse 
+			override makeNoise method 
+			print --> Horse --- Nai Nai Nai
+
+		Dog 
+			override makeNoise method 
+			print --> Dog --- Woof Woof Woof
+	Create a class with main called AnimalTalentShow 
+
+	Create 3 objects of Animal , Dog , Horse 
+		 let them make noise
+
+===========================================================================
+
+		 Overloading 
+		 	 2 methods with same name different parameter list 
+		 	 // does return type , access modifier matter??
+		 	 ----- BIG NOOOOOOOOOO!!!!!
+
+		 	 // does it matter it's static or instance 
+		 	 ----- it does not matter 
+		 	 it can be in same class or it can be in 
+		 	 inherited classes 
+
+
+		 Overriding 	
+		 	-- Inheritance relationship Must Exist
+		 	we can override super classes' instance method 
+		 	in sub class to provide sub class version of action
+
+		 	Name -->> has to be the same 
+		 	Parameter List -->> has to be the same
+		 		(method signature has to be the same)
+		 	return type -->> same at this moment 
+
+		 	visibility -->> has to be same or more 
+
+		 	method overriding is a concept exclusive to 
+		 	instance method
+		 	CAN NOT OVERRIDE STATIC METHOD !!!!!!
+
+=================================================================
+
+Task 2 
+	Create a BankAccount class 
+		fields : 
+			accountName as String
+			accountNumber as long 
+			balance as double 
+
+		Constructor 
+			3 args constructor to set all above value 
+
+		methods : 
+			toString method
+			deposit accept one int as parameter 
+				and it changes the balance accordingly
+			withdraw accept one int as parameter
+				and it changes the balance accordingly
+
+	Create a sub class called SavingAccount 
+		field : 
+			double returnRate
+		Constructor 
+			4 args constructor to set all above value 
+
+		overriden methods : 
+			toString method
+			deposit accept one int as parameter 
+				and it changes the balance accordingly
+				but you get 100$ for each deposit 
+			withdraw accept one int as parameter
+				and it changes the balance accordingly
+				but you get 10$ penalty for each withdraw 
+
+======================================================================
+
+this(args..) 
+	calling current class's other constructor to reuse the functionality 
+VS 
+
+super() 
+	calling super class's other constructor to reuse the functionality 
+
+====================================================================
+
+// static member in inheritance 
+
+	is static method and fields are inherited 
+		YES ! they are inherited 
+
+	public Person{
+		public static String race = "Human"
+	}
+
+	public Student extends Person{
+		// public static String race = "Human"
+		main{
+			Person.race
+			race
+			Student.race
+		}
+	}
+
+=====================================================================================
+
+	STATIC METHODS CAN NOT BE OVERRIDEN!!! it can only be hidden by declaring same method in sub class 
+	if you put @Override on top it will not compile!!!
+	
+
+
+// Method overriding : 
+	 you can define same method with same method signature 
+	 same return type in sub class with different content 
+	 in the method body to override the functionality 
+	 inherited from super class 
+
+	 Rule : 
+	 	it should have same method signature 
+	 	same return type --- at this moment 
+	 	it can not have less visibility
+
+	 WE CAN NOT OVERRIDE A PRIVATE METHOD 
+	 WE CAN NOT OVERRIDE SOMETHING WE DON'T INHERIT
+
+
+
+// overriding VS overloading 
+
+// super. 
+	--> super class's instance fields and methods 
+
+When do we use it mostly : 
+	in overriden method in sub class 
+	if we want to reuse the functionality of super class version of the method and build on top of it ,
+    we can use super.methdoname to access super class version 
+
+
+METHOD OVERRIDING IS A CONCEPT EXCLUSIVELY FOR 
+--------->>>>> INSTANCE METHODS IN INHERITANCE RELATIONSHIP 
+
+
+
+

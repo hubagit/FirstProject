@@ -1,0 +1,40 @@
+package day42_may11;
+
+import java.util.Arrays;
+
+public class ForEachWithArray {
+
+	public static void main(String[] args) {
+		int[] nums = { 1, 4, 6, 7, 2 };
+
+		// updating using for each loop will not work
+		for (int each : nums) {
+			each = 100;
+
+		}
+
+		// because for each loop get the copy of value inside collection
+		// rather than original value
+		for (int i = 0; i < nums.length; i++) {
+			int each = nums[i];
+			each = 100;
+		}
+
+		System.out.println(Arrays.toString(nums));
+
+//		int[] mynums = { 1, 2, 3, 4, 5 };
+//		for (int eachNum : mynums) {
+//			eachNum = 100;
+//
+//		}
+//		System.out.println(Arrays.toString(mynums));
+//
+//		for (int i = 0; i < mynums.length; i++) {
+//			int each = mynums[i];
+//			each = 100;
+//
+//		}
+//		System.out.println(Arrays.toString(mynums));
+	}
+
+}

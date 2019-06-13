@@ -1,0 +1,110 @@
+
+Default behavior of compilers : 
+
+    anything under java.lang package is automatically imported 
+    and no need for explicit import statement   
+        for example : String class , System , Object 
+    non-final fields of the class : 
+        get default value of 0 (.0) for numbers , false for boolean 
+        empty char for char , null for reference variable 
+        int i = 'a' ; --->>> 97 ;   
+    automatic type widening | upcasting 
+        long l = 10  -->>> 10L ; 
+    autoboxing | auto unboxing 
+        Integer i1 = 10 ---->> new Integer(10) ; 
+        int i2 = new Integer(12)  --->>> 12 ; 
+    constructor : 
+        if we don't define any constructor 
+                -->> compiler will provide default no arg constructor 
+               (as long as any constructor is defined we don't get one)
+        first statement of any constructor is a call to super class;s 
+        no arg cobstructor using super() 
+               (as long as no other constructor call is made already)
+    Inheritance : 
+         if a class does not explicitly extend another class 
+         it will implicitly extends Object class 
+    Interface : 
+        all the fields in interface are 
+            automatically public static final 
+            (and can not be marked with other access modifiers private / protected)
+        all the methods without body are automatically public abstract;
+        Everything in interface are implicitly public
+        
+        ===============================================================
+        
+        extends VS implements 
+
+	a class extends another class (only one directly)
+	
+	an interface extends another interface (one or more interfaces)
+	
+	a class implements an interface (one or more)
+	
+	   =================================================================
+        
+        /// ---- TASK 1 
+
+Create two interfaces called 
+
+  Edible 	
+		with single abstract method  void eat(); 
+, Drinkable
+		with single abstract method  void drink(); 
+		
+Drinkable extends Edible interface 
+
+create a class called Burger  and it implements Edible interface 
+it has 2 instance fields  name and size 
+it has constructors to set the value 
+and it has toString method 
+
+create another class called IceCoffee  
+	it implements Drinkable interface
+	it has 1 instance field  -- size 
+	it has constructors to set the value 
+	and it has toString method 
+
+fix any error might come up 
+
+=====================================================
+
+Task 2 
+
+Create an interface called WebDriver 
+
+	add a constant called PURPOSE and assign "Automating Browser"
+
+	add few abstract methods : 
+
+		openBrowser accept no param and return nothing
+		navigateTo accept a String as Url and return nothing 
+		quit accept no param and return nothing
+
+		findElementByID accept one int as id 
+			and return String 
+		findElementsByTagName accept one String as tagName 
+			and return ArrayList of Strings 
+
+Create implemeting classes called 
+		ChromeDriver and FirefoxDriver 
+
+
+	ChromeDriver class 
+
+		instance fields : 
+			int screenSize 
+			double positionX
+
+		add constructor to set the values 
+
+		implemet all abstract methods 
+
+
+		Create ChromeDriver Object 
+			and do some action by calling the methods 
+        
+        
+        
+        
+        
+        

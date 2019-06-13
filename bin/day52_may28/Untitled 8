@@ -1,0 +1,155 @@
+####Hello!
+
+Agenda for today:
+
+- we will recap inheritance (extends keyword, super/sub classes).
+- we will practice super(), super.
+- we will talk about final keyword. (final variable, class, method)
+- then method overriding (@Override)
+
+///- last hour, we will talk about abstraction (general idea, abstract class, abstract method, etc.)  
+-- it's a topic of Saturday, I cannot cover it today :( 
+
+#####################################
+
+1. Inheritance - what is this? First things first, is one of 4 OOP concepts. 
+It's an ability to inherit all visible members from another class. We can inherit variables, methods but not constructor. 
+
+How does it work?
+
+We use keyword extends
+
+We can extend only one class at the time.
+
+WE can have a multi level inheritance - it's when subclass is also a super class for another class.
+
+class Person{ - super class
+	
+} 
+
+class Student extends Person{ - student class is a sub class of Person class
+	
+}
+
+class StudentOnline extends Student{ - StudentOnline class is a sub class of 	Student class
+	
+}
+
+class StudentOncampus extends Student{ - StudentOncampus class is a sub 
+										 class of Student class
+	
+}
+
+We cannot see private members in the subclass.
+
+
+- private is an access modifier.
+
+We should make instance fields private.
+Then, we need to create getters/setters for each instance variable.
+it's.
+
+The idea of toString() method is to provide string representation of an object.
+To convert object into readable string. 
+It translates from java language to human readable language.
+
+
+Actually, toString() method is coming from Object class.
+Object - is a super class for all java classes.
+Every class automatically extends Object class.
+
+Since toString() method is coming from Object class,
+we are actually changing behavior of original method.
+This process calls method overriding. 
+
+When inherited method is re-created in a sub class (same name, same parameters, same return type)
+
+this annotation @Override - is optional. 
+But, you can put this annotation only on top of overridden method.
+
+If you would like to change method implementation in the child class, we free to override method... 
+
+=========================================================================================
+
+What is method implementation? whatever is inside curly braces. {}
+
+Let's say if we will not override toString() method in our custom class - we will not be able to translate 
+(make readable for us) object of custom class.
+
+
+super it's about being super cool..
+it's about calling parent class.
+If we need to call parent class constructor, we use super().
+
+so we have to match arguments of super constructor.
+
+Student student1 = new Student("Firuz", 36, 'M', 1);
+		System.out.println(student1);
+		//Student [name=Firuz, age=36, gender=M, student_id=1] toString() only in Student
+		//Person [name=Firuz, age=36, gender=M] - toString() only in Person
+		//day52_night_session.Student@7852e922 - no toString()
+	}
+
+PLEASE TAKE A BREAKE TILL 8:20
+
+== does equation. It checks if something is equals to something. (double equals)
+= does assigning. When we want to assign some value, we use = (single equals.)
+
+PLEASE TAKE A BREAKE TILL 9:20
+
+Multi level inheritance:
+
+StudentOnCampus -- > Student --> Person
+
+Overriding - process of changing method implementation in the sub/child/derived class.
+
+RULES:
+- method must be inherited from super class
+
+Can we override static method?
+- no, static belongs to the class. If we will have exactly same static method in the child class as in the parent class, 
+it's just a different method. 
+
+@Override
+	public static int getCounter() {.  will not compile with @Override. Bu without will  work. The only problem - it's a different method.
+		return 0;
+	}
+The method getCounter() of type Student must override or implement a supertype 
+ method
+################
+
+final - it's a keyword that makes variable immutable (not possible to change once set),
+method not eligible for overriding, and class - not eligible for sub classing. Thus, final class cannot be a parent class.    
+
+One more thing about final variable naming. 
+It should be spelled all upper case.
+For example: MAX_SPEED, MAX_SIZE, PI
+
+public static final double PI = 3.14159265358979323846; coming from Math class.
+
+Usually, final variables are public static. But not always.
+
+The final field Student.SCHOOL_NAME cannot be 
+ assigned
+
+Student.SCHOOL_NAME = "Rival IT SDET School"; -- ERROR, SCHOOL_NAME is final.
+
+The only reason why do we use class name, is because SCHOOL_NAME is static variable.
+
+static/non static can be final.
+
+
+public class FullTimeEmployee extends Employee{ 
+
+will not work, because Employee is final.
+
+public final class String -- string class cannot be sub-classed.
+
+##################
+
+usually we override toString() method and method equals()
+
+WE will talk about method equals overriding tomorrow.
+
+Good Night!
+ 
